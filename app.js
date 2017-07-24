@@ -7,7 +7,7 @@ server.use(cors());
 
 // server.get('/', function(req, res) {
 //   knex('inventory').then((inventory) => {
-//     res.send("hello")
+//     res.json(inventory)
 //   })
 // })
 
