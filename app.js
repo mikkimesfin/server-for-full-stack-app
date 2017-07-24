@@ -7,8 +7,8 @@ server.use(cors());
 
 server.get('/', function(req, res) {
   knex('inventory').then((inventory) => {
-    res.json(inventory)
+    res.send("hello")
   })
 })
 
-server.listen(8080)
+server.listen(process.env.PORT || 8080)
