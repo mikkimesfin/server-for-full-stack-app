@@ -10,5 +10,14 @@ server.get('/', function(req, res) {
     res.json(inventory)
   })
 })
+server.get('/:id', function(req, res) {
+  var id= req.params.id
+  knex('inventory').where("id", id)
+  .then((inventory) => {
+    res.json(inventory)
+    console.log(inventory)
+  })
+})
+
 
 server.listen(process.env.PORT || 8080)
