@@ -6,31 +6,31 @@ exports.seed = function(knex, Promise) {
       id:1,
       brand: 'maybelline',
       type: 'mascara',
-      price: null
+      price: 5.00
     },
     {
       id:2,
       brand: 'mac',
       type: 'concealer',
-      price:null
+      price: 18.00
     },
     {
       id:3,
       brand: 'nyx',
       type: 'concealer',
-      price: null
+      price: 4.00
     },
     {
       id:4,
       brand: 'BECCA',
       type: 'highlighter',
-      price: null
+      price: 38.00
     },
     {
       id:5,
       brand: 'NARS',
       type: 'foundation',
-      price: null
+      price: 47.00
       }]
       return knex('inventory').insert(inventory)
     })
