@@ -9,10 +9,6 @@ server.use(cors());
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
-server.get('/', (req,res) => {
-  res.send("inventory")
-
-})
 
 
 server.use('inventory', inventory)
