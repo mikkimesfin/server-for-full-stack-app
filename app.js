@@ -1,7 +1,7 @@
 var express = require('express')
 var server = express()
+var inventory = require('./routes/inventory')
 var cors = require('cors')
-var knex = require('./db/knex')
 var bodyParser = require('body-parser')
 
 server.use(cors());
@@ -9,35 +9,11 @@ server.use(cors());
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
-server.get('/', function(req, res) {
-  knex('inventory').then((inventory) => {
-    res.json(inventory)
-  })
+server.get('/', (req,res) => {
+  res.send('hello')
 })
-server.get('/:id', function(req, res) {
-  var id= req.params.id
-  knex('inventory').where("id", id)
-  .then((inventory) => {
-    res.json(inventory)
-    console.log(inventory)
-  })
-})
-// Post Request
-// server.post('/', function(req, res) {
-//   knex('inventory').insert(req.body)
-//   .returning('id')
-//   .then((inventory) => {
-//     res.json(inventory)
-//     console.log(inventory)
-//   })
-// })
 
-server.post('/', function(req, res) {
-  knex('inventory').insert(req.body)
-  .returning('*')
-  .then((inventory) => {
-    res.json(inventory)
-    console.log(inventory)
-  })
-})
+server.use('inventory', inventory)
+
+
 server.listen(process.env.PORT || 8080)

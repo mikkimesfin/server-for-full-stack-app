@@ -1,7 +1,10 @@
 'use strict';
 
-const env = process.env.NODE_ENV || 'development';
-const config = require('../knexfile.js')[env];
-const knex = require('knex')(config);
+var environment = process.env.NODE_ENV || 'development';
+	var config = require('../knexfile');
+	var environmentConfig = config[environment];
+	var knex = require('knex');
+	var connection = knex(environmentConfig);
 
-module.exports = knex;
+
+	module.exports = connection;
