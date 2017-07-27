@@ -81,9 +81,9 @@ router.delete('/:id', (req, res) => {
 module.exports = router;
 
 function validate(data) {
-  var verifyName = typeof data.name == 'string' && data.name.trim() != ''
-  var verifyPublisher = typeof data.publisher == 'string' && data.publisher.trim() != ''
-  var verifyRelease = !isNaN(data.release)
+  var verifyType = typeof data.type == 'string' && data.type.trim() != ''
+  var verifyBrand = typeof data.brand == 'string' && data.brand.trim() != ''
+  var verifyPrice = !isNaN(data.price)
 
-  return verifyName && verifyPublisher && verifyRelease
+  return verifyType && verifyBrand && verifyPrice
 }
