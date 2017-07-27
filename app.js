@@ -9,10 +9,18 @@ server.use(cors());
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
-server.get('/', (req,res) => {
-  res.send(inventory)
-  console.log("inventory")
-})
+// server.get('/', (req,res) => {
+//   res.send(inventory)
+//   console.log("inventory")
+// })
+// server.get('/:id', function(req, res) {
+//   var id= req.params.id
+//   knex('inventory').where("id", id)
+//   .then((inventory) => {
+//     res.json(inventory)
+//     console.log(inventory)
+//   })
+// })
 
 server.use('inventory', inventory)
 
