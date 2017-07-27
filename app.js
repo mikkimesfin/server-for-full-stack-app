@@ -22,10 +22,19 @@ server.get('/:id', function(req, res) {
     console.log(inventory)
   })
 })
+// Post Request
+// server.post('/', function(req, res) {
+//   knex('inventory').insert(req.body)
+//   .returning('id')
+//   .then((inventory) => {
+//     res.json(inventory)
+//     console.log(inventory)
+//   })
+// })
 
 server.post('/', function(req, res) {
   knex('inventory').insert(req.body)
-  .returning('id')
+  .returning('*')
   .then((inventory) => {
     res.json(inventory)
     console.log(inventory)
