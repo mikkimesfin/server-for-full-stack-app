@@ -10,7 +10,7 @@ server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
 server.get('/', (req,res) => {
-  res.send('welcome')
+  res.send("inventory")
 
 })
 

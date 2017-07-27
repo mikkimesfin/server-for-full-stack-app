@@ -25,7 +25,7 @@ router.post('/', function(req, res) {
   } else {
     res.status(500)
     res.json({
-      message: 'sorry but that did not work'
+      message: 'sorry try again'
     })
   }
 })
