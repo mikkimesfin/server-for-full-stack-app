@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded({extended:false}))
 
 
 
-server.use('inventory', inventory)
+server.use('/inventory', inventory)
 
 
 server.listen(process.env.PORT || 8080)
